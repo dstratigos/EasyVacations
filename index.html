@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/bootstrap-datepicker.css" />
+    <title>Assignment 5</title>
+  </head>
+
+  <body>
+    <header class="mt-4">
+      <div class="container px-4 py-2 bg-grayblue">
+        <!-- Search Input-->
+        <div class="row">
+          <div class="input-group input-group-lg mb-2">
+            <div class="input-group-prepend">
+              <span class="input-group-text search-icon bg-white">
+                <i class="fas fa-search text-muted"></i>
+              </span>
+            </div>
+
+            <input
+              id="searchInput"
+              class="form-control border-left-0 basicAutoComplete"
+              name="simple_select"
+              placeholder="Search by City..."
+              autocomplete="off"
+            />
+
+            <div class="input-group-append">
+              <button id="searchBtn" class="btn btn-primary px-5" type="submit">
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- End of Search Input -->
+
+        <div class="row mb-2">
+          <div class="col mr-1 p-0">
+            <!-- Check-in Date Input -->
+            <div class="form-group m-0">
+              <div class="check-in date input-group input-group p-0">
+                <div class="input-group-prepend">
+                  <span class="input-group-text check-in-icon bg-white"><i class="far fa-calendar-alt"></i></span>
+                </div>
+                <input type="text" class="form-control border-left-0" id="check-in-date" placeholder="Choose a date" />
+                <div class="input-group-append">
+                  <span class="input-group-text bg-white">
+                    <i class="fas fa-chevron-left"></i>
+                    <i class="fas fa-chevron-right"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <!-- End of Check-in Date Input -->
+          </div>
+
+          <div class="col mx-1 p-0">
+            <!-- Check-out Date Input -->
+            <div class="form-group m-0">
+              <div class="check-out date input-group p-0">
+                <div class="input-group-prepend">
+                  <span class="input-group-text check-out-icon bg-white"><i class="fas fa-calendar-alt"></i></span>
+                </div>
+                <input type="text" class="form-control border-left-0" id="check-out-date" placeholder="Choose a date" />
+                <div class="input-group-append">
+                  <span class="input-group-text bg-white">
+                    <i class="fas fa-chevron-left"></i>
+                    <i class="fas fa-chevron-right"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <!-- End of Check-out Date Input -->
+          </div>
+
+          <!-- Room-types selector -->
+          <div class="col roomtypes-container ml-1 p-1 bg-white">
+            <div class="input-group">
+              <select class="custom-select" id="room-types">
+                <option selected>Choose a room type</option>
+              </select>
+            </div>
+          </div>
+          <!-- End of Room-types selector -->
+        </div>
+
+        <div class="row">
+          <!-- Price range selector -->
+          <div class="col border-right border-secondary text-white">
+            <p class="price-label mb-2">
+              Price
+              <span class="text-white valueSpan float-right"></span>
+            </p>
+            <form class="range-field">
+              <input id="price-range" class="custom-range" type="range" min="0" />
+            </form>
+          </div>
+
+          <!-- Property type selector -->
+          <div class="col col-2 border-right border-secondary">
+            <p class="property-type-label mb-0">Property Type</p>
+            <div class="input-group">
+              <select class="custom-select text-white" id="property-types">
+                <option value="0" selected>All</option>
+                <option value="1">1 Star</option>
+                <option value="2">2 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="5">5 Stars</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Guest ratings selector -->
+          <div class="col col-2 border-right border-secondary">
+            <p class="property-type-label mb-0">Guest rating</p>
+            <div class="input-group">
+              <select class="custom-select text-white" id="guest-ratings">
+                <option value="0" selected>All</option>
+                <option value="1">0 to 1.0</option>
+                <option value="2">1.1 to 2.0</option>
+                <option value="3">2.1 to 3.0</option>
+                <option value="4">3.1 to 4.0</option>
+                <option value="5">4.1 to 5.0</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Hotel location selector -->
+          <div class="col col-2 border-right border-secondary">
+            <p class="property-type-label mb-0">Hotel location</p>
+            <div class="input-group">
+              <select class="custom-select text-white" id="location-selector">
+                <option value="0" selected>All</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- More filters selector -->
+          <div class="col col-2">
+            <p class="property-type-label mb-0">More filters</p>
+            <div class="input-group">
+              <select class="custom-select text-white" id="more-filters">
+                <option value="0" selected>All</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container bg-lightgray pt-2 pb-1">
+        <!-- Entry template -->
+        <div class="entry-template">
+          <div class="row img-row my-2 mx-0 p-0 bg-white shadow">
+            <!-- Hotel thumbnail -->
+            <div class="col col-3 p-1 d-flex align-items-stretch h-100">
+              <img
+                id="image"
+                class="img-fluid p-1"
+                src="http://comerciodearrecife.com/wp-content/uploads/hotel-prueba-1.jpg"
+                alt="image"
+              />
+            </div>
+
+            <!-- Hotel info -->
+            <div class="col col-3 py-1 pl-4 mt-2 mb-3 border-right">
+              <div id="entry-name" class="row m-0 pb-2 font-weight-bold h4 text-dark"></div>
+              <div id="entry-stars" class="row m-0 pb-3"></div>
+              <div class="row m-0">
+                <p class="h6">Location: <span id="entry-city" class="h5 font-weight-bold"></span></p>
+              </div>
+              <div class="row m-0 pt-3">
+                <p class="h3">
+                  <span id="entry-rating-no" class="badge badge-success"></span>
+                  <span id="entry-rating-text" class="h5 font-weight-bold align-right"></span>
+                  <span id="entry-reviews" class="h6 font-weight-light align-right"></span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Hotel amenities -->
+            <div class="col-2 py-1 px-0 mt-2 mb-3 border-right">
+              <div class="font-weight-bold text-secondary text-center">Amenities</div>
+              <div>
+                <ul class="amenities text-center small pl-0 pt-3"></ul>
+              </div>
+            </div>
+
+            <!-- Hotel map -->
+            <div class="col border-right text-center py-1 mt-2 mb-3">
+              <div class="font-weight-bold text-secondary">Map</div>             
+                <img type="link" class="map img img-fluid" data-toggle="modal" data-target="#myModal" src="../Assets/map-thumbnail.png" />
+            </div>
+
+            <!-- Hotel pricing -->
+            <div class="col col-3 p-1">
+              <row class="text-center">
+                <p class="price-container my-2 mx-4 h2 text-success font-weight-bold">
+                  <span id="price-per-night"></span>
+                  <i class="fas fa-euro-sign"></i>
+                </p>
+                <p class="small">
+                  <span class="nights"></span>
+                  nights for
+                  <span class="total-price h6 full-price text-success font-weight-bold"></span>
+                  <i class="fas fa-euro-sign text-success"></i>
+                </p>
+              </row>
+              <row>
+                <div class="text-center">
+                  <button class="btn btn-lg btn-success mt-3 w-75">Get</button>
+                </div>
+              </row>
+            </div>
+          </div>
+        </div>
+
+        <!-- The actual hotel list -->
+        <div id="hotel-list" class="container container-fluid p-0 my-0"></div>
+      </div>
+
+      <!-- Hotel map modal -->
+      <div class="container">        
+        <div class="modal" id="myModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Hotel Map</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+
+              <div class="modal-body"></div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container container-fluid px-4">
+        <span class="small">&copy;2020 Dimitrios Stratigos</span>
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="./js/bootstrap-autocomplete.min.js" type="text/javascript"></script>
+    <script src="./js/script.js" type="text/javascript"></script>
+    <script src="./js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+    <script src="./js/moment.min.js" type="text/javascript"></script>
+  </body>
+</html>

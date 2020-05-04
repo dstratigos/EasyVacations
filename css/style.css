@@ -1,0 +1,183 @@
+.bg-grayblue {
+  background-color: #37454d;
+}
+
+.bg-lightgray {
+  background-color: rgb(224, 224, 224);
+}
+
+.btn-primary {
+  background-color: #007fad;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #006f97;
+}
+
+.btn-primary:focus {
+  background-color: #007fad;
+  box-shadow: none;
+}
+
+.container.bg-lightgray {
+  padding-bottom: 1rem;
+}
+
+.entry-template {
+  display: none;
+}
+
+.img-row {
+  height: 180px;
+}
+
+.footer .container {
+  background-color: #37454d;
+  text-align: right;
+  color: rgb(150, 150, 150);
+}
+
+.map {
+  padding: 0;
+  height: 60px;
+  margin-top: 2rem;
+}
+
+.map:hover {
+  cursor: pointer;
+  border: 1px solid rgb(189, 189, 189);
+}
+
+#room-types,
+#room-types:focus,
+#room-types:hover {
+  text-align: center;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: url("../assets/chevron-down-solid.svg") no-repeat right 0.5rem center/14px 14px;
+  cursor: pointer;
+}
+
+.custom-select,
+.custom-select:focus {
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+  background: url("../assets/chevron-down-solid-white.svg") no-repeat right 0.5rem center/14px 14px #37454d;
+  cursor: pointer;
+}
+
+.property-type-label {
+  color: rgb(219, 219, 219);
+  font-weight: bold;
+}
+
+.input-group-text {
+  border-top: none;
+  border-bottom: none;
+  border-radius: 0pt;
+}
+
+.check-in-icon {
+  border-left: 8px solid #007fad;
+}
+
+.check-out-icon {
+  border-left: 8px solid orange;
+}
+
+.form-control {
+  border: none;
+  border-radius: 0;
+}
+
+.form-control:focus {
+  border-color: #cccccc;
+  border: none;
+  box-shadow: none;
+}
+
+#check-in-date,
+#check-out-date {
+  text-align: center;
+  padding-top: 31px;
+  padding-bottom: 15px;
+  font-weight: bold;
+}
+
+.check-in::after {
+  position: absolute;
+  left: 50px;
+  top: -3px;
+  content: "Check-in";
+  color: grey;
+  z-index: 3;
+}
+
+.check-out::after {
+  position: absolute;
+  left: 50px;
+  top: -3px;
+  content: "Check-out";
+  color: grey;
+  z-index: 3;
+}
+
+.amenities li {
+  list-style-type: none;
+  font-weight: bold;
+  font-style: italic;
+  color: rgb(32, 32, 32);
+}
+
+.price-label {
+  color: rgb(219, 219, 219);
+  font-weight: bold;
+}
+
+.valueSpan {
+  display: none;
+  padding-top: 4px;
+  font-size: 10pt;
+}
+
+.valueSpan::before {
+  content: "max: ";
+}
+
+.valueSpan::after {
+  content: " €";
+}
+
+.custom-range::-moz-range-thumb {
+  background-color: whitesmoke;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.custom-range::-moz-range-thumb:hover {
+  cursor: pointer;
+}
+
+.custom-range::-webkit-slider-thumb {
+  background-color: whitesmoke;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: -0.5rem;
+}
+
+.custom-range::-webkit-slider-thumb {
+  cursor: pointer;
+}
+
+.custom-range::-moz-range-track {
+  background-color: #007fad;
+  height: 0.3rem;
+}
+
+.custom-range::-webkit-slider-runnable-track {
+  background-color: #007fad;
+  height: 0.3rem;
+}
